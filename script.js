@@ -1,6 +1,7 @@
 const form = document.querySelector('form')
 const length = document.querySelector('input')
 const passH1 = document.querySelector('h1')
+const copyBtn = document.querySelector('.copy')
 let passStatus = true;
 
 form.addEventListener('submit', (e) => {
@@ -32,10 +33,27 @@ form.addEventListener('submit', (e) => {
             password = ''
             generatePass()
         } else{
-            passH1.textContent = password
+            passH1.innerHTML = password
         }
     }
 
     generatePass()
 
 })
+
+
+function triggerExample() {
+    // get the container
+    const element = document.querySelector('h1');
+    // Create a fake `textarea` and set the contents to the text
+    // you want to copy
+    const storage = document.createElement('textarea');
+    storage.value = element.innerHTML;
+    element.appendChild(storage);
+  
+    // Copy the text in the fake `textarea` and remove the `textarea`
+    storage.select();
+    storage.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+    element.removeChild(storage);
+  }

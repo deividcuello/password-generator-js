@@ -4,6 +4,7 @@
     --green: rgb(0, 128, 0);
     --white: rgb(255, 255, 255);
     --gray: rgb(43, 43, 43);
+    --blue: rgb(0, 0, 255);
 }
 
 *,
@@ -65,4 +66,14 @@ body{
     white-space: pre-wrap;
     word-break: break-word;
     text-align: center;
+}
+
+#app .copy{
+    background-color: var(--blue);
+    font-weight: bolder;
+    padding: 0.2rem 0.5rem;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
 }
