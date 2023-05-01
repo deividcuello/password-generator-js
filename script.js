@@ -43,17 +43,24 @@ form.addEventListener('submit', (e) => {
 
 
 function triggerExample() {
-    // get the container
-    const element = document.querySelector('h1');
-    // Create a fake `textarea` and set the contents to the text
-    // you want to copy
+    const span = document.querySelector('#app span:last-child')
+    span.style.display = 'inline-block'
+    if(passH1.innerHTML == ''){
+        span.innerHTML = 'You must first generate a password'
+        span.classList.add('empty')
+    } else{
+        span.innerHTML = 'Copied to clipbloard'
+        span.classList.add('text')
+    }
+    setTimeout(function () {
+        span.style.display = 'none'
+    }, 3000)
     const storage = document.createElement('textarea');
-    storage.value = element.innerHTML;
-    element.appendChild(storage);
+    storage.value = passH1.innerHTML;
+    passH1.appendChild(storage);
   
-    // Copy the text in the fake `textarea` and remove the `textarea`
     storage.select();
     storage.setSelectionRange(0, 99999);
     document.execCommand('copy');
-    element.removeChild(storage);
+    passH1.removeChild(storage);
   }

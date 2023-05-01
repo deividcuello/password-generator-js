@@ -5,6 +5,7 @@
     --white: rgb(255, 255, 255);
     --gray: rgb(43, 43, 43);
     --blue: rgb(0, 0, 255);
+    --red: red;
 }
 
 *,
@@ -76,4 +77,19 @@ body{
     cursor: pointer;
     font-size: 1.2rem;
     border-radius: 0.5rem;
+}
+
+#app span:last-child{
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: none;
+}
+
+#app span.empty:last-child{
+    color: var(--red);
+}
+
+#app span.text:last-child{
+    color: var(--green);
 }
