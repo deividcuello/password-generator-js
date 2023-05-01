@@ -38,6 +38,4 @@ form.addEventListener('submit', (e) => {
 
     generatePass()
 
-
-
 })
